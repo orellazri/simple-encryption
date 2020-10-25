@@ -11,7 +11,9 @@ namespace base64 {
 
 	using byte = std::uint8_t;
 
-	inline std::string encode(const std::vector<byte> input) {
+	inline std::string encode(const std::string input_str) {
+		std::vector<byte> input(begin(input_str), end(input_str));
+
 		std::string encoded;
 		encoded.reserve(((input.size() / 3) + (input.size() % 3 > 0)) * 4);
 
@@ -48,7 +50,7 @@ namespace base64 {
 		return encoded;
 	}
 
-	inline std::string decode(const std::string& input)
+	inline std::string decode(const std::string input)
 	{
 		if (input.length() % 4 && input.length())
 			throw std::runtime_error("Invalid base64 length!");
