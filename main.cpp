@@ -10,8 +10,8 @@
 int main(int argc, char** argv)
 {
 	if (argc != 4) {
-		std::cout << "Usage: [e:encrypt|d:decrypt] [INPUT] [KEY]" << std::endl;
-		std::cout << "Example: 0 \"This is a secret!\" DontTell" << std::endl;
+		std::cout << "Usage: [e:Encrypt|d:Decrypt] [MESSAGE] [KEY]" << std::endl;
+		std::cout << "Example: e \"This is a secret. Shh...\" MyKeyIsPrivate" << std::endl;
 		std::cout << "It is recommended that the key will not be longer than the input." << std::endl;
 		return -1;
 	}
