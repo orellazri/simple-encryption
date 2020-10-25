@@ -5,8 +5,6 @@
 #include "base64.h"
 #include "vigenere.h"
 
-#define LOG(x) std::cout << x << std::endl;
-
 int main(int argc, char** argv)
 {
 	if (argc != 4) {
