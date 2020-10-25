@@ -48,7 +48,7 @@ namespace base64 {
 		return encoded;
 	}
 
-	inline std::vector<byte> decode(const std::string& input)
+	inline std::string decode(const std::string& input)
 	{
 		if (input.length() % 4 && input.length())
 			throw std::runtime_error("Invalid base64 length!");
@@ -80,10 +80,10 @@ namespace base64 {
 					case 1:
 						decoded.push_back((temp >> 16) & 0x000000FF);
 						decoded.push_back((temp >> 8) & 0x000000FF);
-						return decoded;
+						return std::string(begin(decoded), end(decoded));
 					case 2:
 						decoded.push_back((temp >> 10) & 0x000000FF);
-						return decoded;
+						return std::string(begin(decoded), end(decoded));
 					default:
 						throw std::runtime_error("Invalid padding in base64!");
 					}
@@ -98,6 +98,6 @@ namespace base64 {
 			decoded.push_back((temp) & 0x000000FF);
 		}
 
-		return decoded;
+		return std::string(begin(decoded), end(decoded));
 	}
 }
