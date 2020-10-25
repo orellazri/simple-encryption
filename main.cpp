@@ -35,7 +35,6 @@ int main(int argc, char** argv)
 	catch (std::exception & e)
 	{
 		std::cerr << "Could not decrypt input with the given key." << std::endl;
-		LOG(e.what());
 	}
 
 	if (result.compare("")) {
@@ -44,6 +43,7 @@ int main(int argc, char** argv)
 		else
 			std::cout << "Decrypted input: " << std::endl;
 
+		std::cout << "------------------" << std::endl;
 		std::cout << result << std::endl;
 	}
 
