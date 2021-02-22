@@ -8,7 +8,7 @@ The decryption process is just the opposite. It first decrypts the Vigenère cip
 We encode with base64 before running Vigenère cipher to obfuscate characters that could give away the type of the message we want to encrypt. For example `{` and `}` characters in JSON, or `<` and `>` characters in XML. 
 
 ### Side notes
-_This encryption is neither secure nor unbreakable. It it used as more of a way to quickly obfuscate your messages._
+_This encryption is neither secure nor unbreakable. It's used as more of a way to quickly obfuscate your messages._
 
 _It is recommended that the key will not be longer than the input._
 
